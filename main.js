@@ -12,6 +12,10 @@ $("body").on("keyup keydown keypress change", ".item input", function (e) {
 		let pct = parseFloat(tariff_pct);
 		pct = pct / 100;
 
+		if (qty === "" || cost === "") {
+			return false;
+		}
+
 		//make them into numbers because otherwise it reads input as a string, parseFloat works with decimals
 		qty = parseFloat(qty);
 		cost = parseFloat(cost);
